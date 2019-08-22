@@ -102,8 +102,8 @@ Pagination is supported
     "order_id" => "10001",
     "reference" => "Webshop 10001",
     "sender" => [
-      "name" => "Shipmondo.dk ApS",
-      "address1" => "Strandvejen 6",
+      "name" => "Shipmondo ApS",
+      "address1" => "Strandvejen 6B",
       "address2" => null,
       "country_code" => "DK",
       "zipcode" => "5240",
@@ -208,8 +208,8 @@ Pagination is supported
     "order_id" => "10001",
     "reference" => "Webshop 10001",
     "sender" => [
-      "name" => "Shipmondo.dk ApS",
-      "address1" => "Strandvejen 6",
+      "name" => "Shipmondo ApS",
+      "address1" => "Strandvejen 6B",
       "address2" => null,
       "country_code" => "DK",
       "zipcode" => "5240",
@@ -247,8 +247,8 @@ Pagination is supported
     "order_id" => "10001",
     "reference" => "Webshop 10001",
     "sender" => [
-      "name" => "Shipmondo.dk ApS",
-      "address1" => "Strandvejen 6",
+      "name" => "Shipmondo ApS",
+      "address1" => "Strandvejen 6B",
       "address2" => null,
       "country_code" => "DK",
       "zipcode" => "5240",
