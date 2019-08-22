@@ -2,7 +2,7 @@
 
 This SDK supports Shipmondo API v3.
 
-Specification: https://app.shipmondo/api/public/v3/specification
+Specification: https://app.shipmondo.com/api/public/v3/specification
 
 ## Getting started
 
