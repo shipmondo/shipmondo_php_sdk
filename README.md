@@ -128,8 +128,8 @@ Pagination is supported
     ),
     "parcels" => [
       [
-      "weight" => 1000
-      )
+        "weight" => 1000
+      ]
     ),
   ];
   echo $client->createShipment($params);
