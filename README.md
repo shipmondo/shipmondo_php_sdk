@@ -4,6 +4,8 @@ This SDK supports Shipmondo API v3.
 
 Specification: https://app.shipmondo.com/api/public/v3/specification
 
+**Note:** If you want to upgrade from [pakkelabels-php-sdk](https://github.com/pakkelabels/pakkelabels-php-sdk) use refer to [this section](#migrating-from-pakkelabelspakkelabels-php-sdk)
+
 ## Getting started
 
 Below is a simple PHP script which illustrate the minimum amount of code needed to getting started.
@@ -283,7 +285,7 @@ Pagination is supported
 ?>
 ```
 
-## Migrating from [pakkelabels/pakkelabels-php-sdk](https://github.com/pakkelabels/pakkelabels-php-sdk)
+## Migrating from [pakkelabels-php-sdk](https://github.com/pakkelabels/pakkelabels-php-sdk)
 
 If you have used the pakkelabels-php-sdk library and you want to upgrade to shipmondo_php_sdk, you have to do as follows:
 - Change _Pakkelabels.php_ to _Shipmondo.php_ in any require you use
