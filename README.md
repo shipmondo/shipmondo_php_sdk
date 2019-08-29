@@ -285,9 +285,9 @@ Pagination is supported
 ?>
 ```
 
-## Migrating from [pakkelabels-php-sdk](https://github.com/pakkelabels/pakkelabels-php-sdk)
+## Migrating from pakkelabels-php-sdk
 
-If you have used the pakkelabels-php-sdk library and you want to upgrade to shipmondo_php_sdk, you have to do as follows:
+If you have used the [pakkelabels-php-sdk](https://github.com/pakkelabels/pakkelabels-php-sdk) library and you want to upgrade to shipmondo_php_sdk, you have to do as follows:
 - Change _Pakkelabels.php_ to _Shipmondo.php_ in any require you use
 - Change references to the _Pakkelabels_ and _PakkelabelsException_ class to _Shipmondo_ and _ShipmondoException_
 - All function calls must be changes to camelCase i.e. _create\_shipment_ -> _createShipment_
