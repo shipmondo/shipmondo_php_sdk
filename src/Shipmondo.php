@@ -14,98 +14,203 @@ class Shipmondo {
         $this->_api_base_path = $api_base_path;
     }
 
-    public function accountBalance() {
-        $result = $this->_makeApiCall('/account/balance');
+    public function getAccountBalance() {
+        $result = $this->_makeApiCall("/account/balance", 'GET');
         return $result;
     }
-
-    public function accountPaymentRequests($params) {
-        $result = $this->_makeApiCall('/account/payment_requests', 'GET', $params);
+    
+    public function getAccountPaymentRequests($params) {
+        $result = $this->_makeApiCall("/account/payment_requests", 'GET', $params);
         return $result;
     }
-
-    public function products($params) {
-        $result = $this->_makeApiCall('/products', 'GET', $params);
+    
+    public function getProducts($params) {
+        $result = $this->_makeApiCall("/products", 'GET', $params);
         return $result;
     }
-
-    public function pickupPoints($params) {
-        $result = $this->_makeApiCall('/pickup_points', 'GET', $params);
+    
+    public function getPackageTypes($params) {
+        $result = $this->_makeApiCall("/package_types", 'GET', $params);
         return $result;
     }
-
-    public function shipmentMonitorStatuses($params) {
-        $result = $this->_makeApiCall('/shipment_monitor_statuses', 'GET', $params);
-        return $result;
-    }  
-
-    public function returnPortals($params) {
-        $result = $this->_makeApiCall('/return_portals', 'GET', $params);
-        return $result;
-    }  
-  
-    public function returnPortal($id) {
-        $result = $this->_makeApiCall('/return_portals/' . $id);
+    
+    public function getShipments($params) {
+        $result = $this->_makeApiCall("/shipments", 'GET', $params);
         return $result;
     }
-
-    public function returnPortalShipments($return_portal_id, $params) {
-        $result = $this->_makeApiCall('/return_portals/' . $return_portal_id . '/shipments');
-        return $result;
-    }
-
-    public function shipments($params) {
-        $result = $this->_makeApiCall('/shipments', 'GET', $params);
-        return $result;
-    }
-
-    public function shipment($id) {
-        $result = $this->_makeApiCall('/shipments/' . $id);
-        return $result;
-    }
-
-    public function shipmentLabels($id, $params) {
-        $result = $this->_makeApiCall('/shipments/' . $id . '/labels', 'GET', $params);
-        return $result;
-    }
-
+    
     public function createShipment($params) {
-        $result = $this->_makeApiCall('/shipments', 'POST', $params);
+        $result = $this->_makeApiCall("/shipments", 'POST', $params);
         return $result;
     }
-
-    public function printQueueEntries($params) {
-        $result = $this->_makeApiCall('/print_queue_entries', 'GET', $params);
-        return $result;
-    }  
-
-    public function importedShipments($params) {
-        $result = $this->_makeApiCall('/imported_shipments', 'GET', $params);
+    
+    public function getShipment($id) {
+        $result = $this->_makeApiCall("/shipments/$id", 'GET');
         return $result;
     }
-
-    public function importedShipment($id) {
-        $result = $this->_makeApiCall('/imported_shipments/' . $id);
+    
+    public function getShipmentLabels($shipment_id, $params) {
+        $result = $this->_makeApiCall("/shipments/$shipment_id/labels", 'GET', $params);
         return $result;
     }
-
+    
+    public function getShipmentProformaInvoices($shipment_id) {
+        $result = $this->_makeApiCall("/shipments/$shipment_id/proforma_invoices", 'GET');
+        return $result;
+    }
+    
+    public function getCmrWaybills($params) {
+        $result = $this->_makeApiCall("/cmr_waybills", 'GET', $params);
+        return $result;
+    }
+    
+    public function createCmrWaybill($params) {
+        $result = $this->_makeApiCall("/cmr_waybills", 'POST', $params);
+        return $result;
+    }
+    
+    public function getCmrWaybill($id) {
+        $result = $this->_makeApiCall("/cmr_waybills/$id", 'GET');
+        return $result;
+    }
+    
+    public function getImportedShipments($params) {
+        $result = $this->_makeApiCall("/imported_shipments", 'GET', $params);
+        return $result;
+    }
+    
     public function createImportedShipment($params) {
-        $result = $this->_makeApiCall('/imported_shipments', 'POST', $params);
+        $result = $this->_makeApiCall("/imported_shipments", 'POST', $params);
         return $result;
     }
-
+    
+    public function getImportedShipment($id) {
+        $result = $this->_makeApiCall("/imported_shipments/$id", 'GET');
+        return $result;
+    }
+    
     public function updateImportedShipment($id, $params) {
-        $result = $this->_makeApiCall('/imported_shipments/'. $id, 'PUT', $params);
+        $result = $this->_makeApiCall("/imported_shipments/$id", 'PUT', $params);
         return $result;
     }
-
+    
     public function deleteImportedShipment($id) {
-        $result = $this->_makeApiCall('/imported_shipments/'. $id, 'DELETE');
+        $result = $this->_makeApiCall("/imported_shipments/$id", 'DELETE');
         return $result;
     }
-
-    public function labels($params) {
-        $result = $this->_makeApiCall('/labels/', 'GET', $params);
+    
+    public function getPickupPoints($params) {
+        $result = $this->_makeApiCall("/pickup_points", 'GET', $params);
+        return $result;
+    }
+    
+    public function getShipmentMonitorStatuses($params) {
+        $result = $this->_makeApiCall("/shipment_monitor_statuses", 'GET', $params);
+        return $result;
+    }
+    
+    public function getShipmentMonitorDetails($params) {
+        $result = $this->_makeApiCall("/shipment_monitor_details", 'GET', $params);
+        return $result;
+    }
+    
+    public function getPrintQueueEntries($params) {
+        $result = $this->_makeApiCall("/print_queue_entries", 'GET', $params);
+        return $result;
+    }
+    
+    public function getPrinters() {
+        $result = $this->_makeApiCall("/printers", 'GET');
+        return $result;
+    }
+    
+    public function getReturnPortals($params) {
+        $result = $this->_makeApiCall("/return_portals", 'GET', $params);
+        return $result;
+    }
+    
+    public function getReturnPortal($id) {
+        $result = $this->_makeApiCall("/return_portals/$id", 'GET');
+        return $result;
+    }
+    
+    public function getReturnPortalShipments($return_portal_id, $params) {
+        $result = $this->_makeApiCall("/return_portals/$return_portal_id/shipments", 'GET', $params);
+        return $result;
+    }
+    
+    public function getLabels($params) {
+        $result = $this->_makeApiCall("/labels", 'GET', $params);
+        return $result;
+    }
+    
+    public function getQuote($params) {
+        $result = $this->_makeApiCall("/quotes", 'POST', $params);
+        return $result;
+    }
+    
+    public function getCarriers($params) {
+        $result = $this->_makeApiCall("/carriers", 'GET', $params);
+        return $result;
+    }
+    
+    public function getShipmentTemplates($params) {
+        $result = $this->_makeApiCall("/shipment_templates", 'GET', $params);
+        return $result;
+    }
+    
+    public function getShipmentTemplate($id) {
+        $result = $this->_makeApiCall("/shipment_templates/$id", 'GET');
+        return $result;
+    }
+    
+    public function getSalesOrders($params) {
+        $result = $this->_makeApiCall("/sales_orders", 'GET', $params);
+        return $result;
+    }
+    
+    public function createSalesOrder($params) {
+        $result = $this->_makeApiCall("/sales_orders", 'POST', $params);
+        return $result;
+    }
+    
+    public function getSalesOrder($id) {
+        $result = $this->_makeApiCall("/sales_orders/$id", 'GET');
+        return $result;
+    }
+    
+    public function getPaymentGateways($params) {
+        $result = $this->_makeApiCall("/payment_gateways", 'GET', $params);
+        return $result;
+    }
+    
+    public function getPaymentGateway($id) {
+        $result = $this->_makeApiCall("/payment_gateways/$id", 'GET');
+        return $result;
+    }
+    
+    public function getDocumentEndOfDay($params) {
+        $result = $this->_makeApiCall("/documents/end_of_day", 'GET', $params);
+        return $result;
+    }
+    
+    public function getDocumentWaybill($params) {
+        $result = $this->_makeApiCall("/documents/waybill", 'GET', $params);
+        return $result;
+    }
+    
+    public function getPickupRequests($params) {
+        $result = $this->_makeApiCall("/pickup_requests", 'GET', $params);
+        return $result;
+    }
+    
+    public function createPickupRequest($params) {
+        $result = $this->_makeApiCall("/pickup_requests", 'POST', $params);
+        return $result;
+    }
+    
+    public function getPickupRequest($id) {
+        $result = $this->_makeApiCall("/pickup_requests/$id", 'GET');
         return $result;
     }
 
