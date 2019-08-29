@@ -1,5 +1,5 @@
 {
-    "name": "pakkelabels/pakkelabels-php-sdk",
+    "name": "shipmondo/shipmondo_php_sdk",
     "description": "Shipmondo's official PHP library",
     "type": "library",
     "minimum-stability": "stable",
