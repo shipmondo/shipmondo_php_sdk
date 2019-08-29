@@ -24,7 +24,7 @@ Once the $client object is created, you can begin to use the API.
 #### Get current balance
 ```php5
 <?php
-  echo $client->accountBalance();
+  echo $client->getAccountBalance();
 ?>
 ```
 #### Get outstanding payment requests
@@ -34,7 +34,7 @@ Once the $client object is created, you can begin to use the API.
     'created_at_min' => '2019-08-22',
     'page' => 1
   ];
-  echo $client->accountPaymentRequests($params);
+  echo $client->getAccountPaymentRequests($params);
 ?>
 ```
 #### Get available products
@@ -45,7 +45,7 @@ Once the $client object is created, you can begin to use the API.
     'carrier_code' => 'gls',
     'page' => 1
   ];
-  echo $client->products($params);
+  echo $client->getProducts($params);
 ?>
 ```
 Pagination is supported
@@ -68,7 +68,7 @@ Pagination is supported
     'page' => 1,
     'carrier_code' => 'dao'
   ];
-  echo $client->shipments($params);
+  echo $client->getShipments($params);
 ?>
 ```
 Pagination is supported
@@ -77,7 +77,7 @@ Pagination is supported
 ```php5
 <?php
   $id = 5545625;
-  echo $client->shipment($id);  
+  echo $client->getShipment($id);  
 ?>
 ```
 #### Get label(s) for shipment
@@ -87,7 +87,7 @@ Pagination is supported
   $params = [
     'label_format' => '10x19_pdf'
   ];
-  echo $client->shipmentLabels($shipment_id, $params);  
+  echo $client->getShipmentLabels($shipment_id, $params);  
 ?>
 ```
 #### Create shipment
@@ -142,7 +142,7 @@ Pagination is supported
     'ids' => '5546689,5546696',
     'page' => 1
   ];
-  echo $client->shipmentMonitorStatuses($params);  
+  echo $client->getShipmentMonitorStatuses($params);  
 ?>
 ```
 #### Get print queue entries
@@ -151,7 +151,7 @@ Pagination is supported
   $params = [
     'page' => 1
   ];
-  echo print_r($client->printQueueEntries($params);
+  echo print_r($client->getPrintQueueEntries($params);
 ?>
 ```
 #### Get return portals
@@ -160,14 +160,14 @@ Pagination is supported
   $params = [
     'page' => 1
   ];
-  echo $client->returnPortals($params);  
+  echo $client->getReturnPortals($params);  
 ?>
 ```
 #### Get return portal by id
 ```php5
 <?php
   $id = 4766;
-  echo $client->returnPortal($id);  
+  echo $client->getReturnPortal($id);  
 ?>
 ```
 #### Get return shipments for return portal
@@ -177,7 +177,7 @@ Pagination is supported
   $params = [
     'page' => 1
   ];
-  echo $client->returnPortalShipments($return_portal_id, $params);  
+  echo $client->getReturnPortalShipments($return_portal_id, $params);  
 ?>
 ```
 Pagination is supported
@@ -187,7 +187,7 @@ Pagination is supported
   $params = [
     'page' => 1
   ];
-  echo $client->importedShipments($params);
+  echo $client->getImportedShipments($params);
 ?>
 ```
 Pagination is supported
@@ -195,7 +195,7 @@ Pagination is supported
 ```php5
 <?php
   $id = 75545625;
-  echo $client->importedShipment($id);
+  echo $client->getImportedShipment($id);
 ?>
 ```
 #### Create imported shipment
@@ -282,3 +282,11 @@ Pagination is supported
   echo $client->deleteImportedShipment($id);
 ?>
 ```
+
+## Migrating from [pakkelabels/pakkelabels-php-sdk](https://github.com/pakkelabels/pakkelabels-php-sdk)
+
+If you have used the pakkelabels-php-sdk library and you want to upgrade to shipmondo_php_sdk, you have to do as follows:
+- Change _Pakkelabels.php_ to _Shipmondo.php_ in any require you use
+- Change references to the _Pakkelabels_ and _PakkelabelsException_ class to _Shipmondo_ and _ShipmondoException_
+- All function calls must be changes to camelCase i.e. _create\_shipment_ -> _createShipment_
+- All GET function calls must add _get_ in front of, as well as camelCase i.e. _account\_balance_ -> _getAccountBalance_

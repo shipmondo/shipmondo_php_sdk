@@ -19,22 +19,22 @@ class Shipmondo {
         return $result;
     }
     
-    public function getAccountPaymentRequests($params) {
+    public function getAccountPaymentRequests($params = []) {
         $result = $this->_makeApiCall("/account/payment_requests", 'GET', $params);
         return $result;
     }
     
-    public function getProducts($params) {
+    public function getProducts($params = []) {
         $result = $this->_makeApiCall("/products", 'GET', $params);
         return $result;
     }
     
-    public function getPackageTypes($params) {
+    public function getPackageTypes($params = []) {
         $result = $this->_makeApiCall("/package_types", 'GET', $params);
         return $result;
     }
     
-    public function getShipments($params) {
+    public function getShipments($params = []) {
         $result = $this->_makeApiCall("/shipments", 'GET', $params);
         return $result;
     }
@@ -49,7 +49,7 @@ class Shipmondo {
         return $result;
     }
     
-    public function getShipmentLabels($shipment_id, $params) {
+    public function getShipmentLabels($shipment_id, $params = []) {
         $result = $this->_makeApiCall("/shipments/$shipment_id/labels", 'GET', $params);
         return $result;
     }
@@ -59,7 +59,7 @@ class Shipmondo {
         return $result;
     }
     
-    public function getCmrWaybills($params) {
+    public function getCmrWaybills($params = []) {
         $result = $this->_makeApiCall("/cmr_waybills", 'GET', $params);
         return $result;
     }
@@ -74,7 +74,7 @@ class Shipmondo {
         return $result;
     }
     
-    public function getImportedShipments($params) {
+    public function getImportedShipments($params = []) {
         $result = $this->_makeApiCall("/imported_shipments", 'GET', $params);
         return $result;
     }
@@ -99,22 +99,22 @@ class Shipmondo {
         return $result;
     }
     
-    public function getPickupPoints($params) {
+    public function getPickupPoints($params = []) {
         $result = $this->_makeApiCall("/pickup_points", 'GET', $params);
         return $result;
     }
     
-    public function getShipmentMonitorStatuses($params) {
+    public function getShipmentMonitorStatuses($params = []) {
         $result = $this->_makeApiCall("/shipment_monitor_statuses", 'GET', $params);
         return $result;
     }
     
-    public function getShipmentMonitorDetails($params) {
+    public function getShipmentMonitorDetails($params = []) {
         $result = $this->_makeApiCall("/shipment_monitor_details", 'GET', $params);
         return $result;
     }
     
-    public function getPrintQueueEntries($params) {
+    public function getPrintQueueEntries($params = []) {
         $result = $this->_makeApiCall("/print_queue_entries", 'GET', $params);
         return $result;
     }
@@ -124,7 +124,7 @@ class Shipmondo {
         return $result;
     }
     
-    public function getReturnPortals($params) {
+    public function getReturnPortals($params = []) {
         $result = $this->_makeApiCall("/return_portals", 'GET', $params);
         return $result;
     }
@@ -134,12 +134,12 @@ class Shipmondo {
         return $result;
     }
     
-    public function getReturnPortalShipments($return_portal_id, $params) {
+    public function getReturnPortalShipments($return_portal_id, $params = []) {
         $result = $this->_makeApiCall("/return_portals/$return_portal_id/shipments", 'GET', $params);
         return $result;
     }
     
-    public function getLabels($params) {
+    public function getLabels($params = []) {
         $result = $this->_makeApiCall("/labels", 'GET', $params);
         return $result;
     }
@@ -149,12 +149,12 @@ class Shipmondo {
         return $result;
     }
     
-    public function getCarriers($params) {
+    public function getCarriers($params = []) {
         $result = $this->_makeApiCall("/carriers", 'GET', $params);
         return $result;
     }
     
-    public function getShipmentTemplates($params) {
+    public function getShipmentTemplates($params = []) {
         $result = $this->_makeApiCall("/shipment_templates", 'GET', $params);
         return $result;
     }
@@ -164,7 +164,7 @@ class Shipmondo {
         return $result;
     }
     
-    public function getSalesOrders($params) {
+    public function getSalesOrders($params = []) {
         $result = $this->_makeApiCall("/sales_orders", 'GET', $params);
         return $result;
     }
@@ -179,7 +179,7 @@ class Shipmondo {
         return $result;
     }
     
-    public function getPaymentGateways($params) {
+    public function getPaymentGateways($params = []) {
         $result = $this->_makeApiCall("/payment_gateways", 'GET', $params);
         return $result;
     }
@@ -189,17 +189,17 @@ class Shipmondo {
         return $result;
     }
     
-    public function getDocumentEndOfDay($params) {
+    public function getDocumentEndOfDay($params = []) {
         $result = $this->_makeApiCall("/documents/end_of_day", 'GET', $params);
         return $result;
     }
     
-    public function getDocumentWaybill($params) {
+    public function getDocumentWaybill($params = []) {
         $result = $this->_makeApiCall("/documents/waybill", 'GET', $params);
         return $result;
     }
     
-    public function getPickupRequests($params) {
+    public function getPickupRequests($params = []) {
         $result = $this->_makeApiCall("/pickup_requests", 'GET', $params);
         return $result;
     }
