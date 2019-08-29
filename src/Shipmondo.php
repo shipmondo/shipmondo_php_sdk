@@ -99,17 +99,17 @@ class Shipmondo {
         return $result;
     }
     
-    public function getPickupPoints($params = []) {
+    public function getPickupPoints($params) {
         $result = $this->_makeApiCall("/pickup_points", 'GET', $params);
         return $result;
     }
     
-    public function getShipmentMonitorStatuses($params = []) {
+    public function getShipmentMonitorStatuses($params) {
         $result = $this->_makeApiCall("/shipment_monitor_statuses", 'GET', $params);
         return $result;
     }
     
-    public function getShipmentMonitorDetails($params = []) {
+    public function getShipmentMonitorDetails($params) {
         $result = $this->_makeApiCall("/shipment_monitor_details", 'GET', $params);
         return $result;
     }
@@ -139,7 +139,7 @@ class Shipmondo {
         return $result;
     }
     
-    public function getLabels($params = []) {
+    public function getLabels($params) {
         $result = $this->_makeApiCall("/labels", 'GET', $params);
         return $result;
     }
@@ -149,7 +149,7 @@ class Shipmondo {
         return $result;
     }
     
-    public function getCarriers($params = []) {
+    public function getCarriers($params) {
         $result = $this->_makeApiCall("/carriers", 'GET', $params);
         return $result;
     }
@@ -189,12 +189,12 @@ class Shipmondo {
         return $result;
     }
     
-    public function getDocumentEndOfDay($params = []) {
+    public function getDocumentEndOfDay($params) {
         $result = $this->_makeApiCall("/documents/end_of_day", 'GET', $params);
         return $result;
     }
     
-    public function getDocumentWaybill($params = []) {
+    public function getDocumentWaybill($params) {
         $result = $this->_makeApiCall("/documents/waybill", 'GET', $params);
         return $result;
     }
