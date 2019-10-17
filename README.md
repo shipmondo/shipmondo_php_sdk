@@ -114,7 +114,7 @@ Pagination is supported
       "email" => "firma@email.dk",
       "telephone" => "70400407",
       "mobile" => "70400407"       
-    ),
+    ],
     "receiver" => [
       "name" => "Lene Jensen",
       "address1" => "Vindegade 112",
@@ -127,12 +127,12 @@ Pagination is supported
       "telephone" => "50607080",
       "mobile" => "50607080",
       "instruction" => null
-    ),
+    ],
     "parcels" => [
       [
         "weight" => 1000
       ]
-    ),
+    ],
   ];
   echo $client->createShipment($params);
 ?>
