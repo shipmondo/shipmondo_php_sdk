@@ -3,13 +3,13 @@ require_once('ShipmondoException.php');
 
 class Shipmondo {
     const API_ENDPOINT = 'https://app.shipmondo.com/api/public/v3';
-    const VERSION = '3.1.0';
+    const VERSION = '3.1.1';
 
     private $_api_user;
     private $_api_key;
 
-    public function __construct($api_user, $api_key, $api_base_path=self::API_ENDPOINT){
-    $this->_api_user = $api_user;
+    public function __construct($api_user, $api_key, $api_base_path=self::API_ENDPOINT) {
+        $this->_api_user = $api_user;
         $this->_api_key = $api_key;
         $this->_api_base_path = $api_base_path;
     }
@@ -114,11 +114,6 @@ class Shipmondo {
         return $result;
     }
     
-    public function getPrintQueueEntries($params = []) {
-        $result = $this->_makeApiCall("/print_queue_entries", 'GET', $params);
-        return $result;
-    }
-    
     public function getPrinters() {
         $result = $this->_makeApiCall("/printers", 'GET');
         return $result;
@@ -176,6 +171,11 @@ class Shipmondo {
     
     public function getSalesOrder($id) {
         $result = $this->_makeApiCall("/sales_orders/$id", 'GET');
+        return $result;
+    }
+    
+    public function createSalesOrderShipment($sales_order_id) {
+        $result = $this->_makeApiCall("/sales_orders/$sales_order_id/create_shipment", 'POST');
         return $result;
     }
     
@@ -279,7 +279,7 @@ class Shipmondo {
         curl_close($ch);
         
         if ($http_code != 200) {
-            throw new ShipmondoException($output['error']);
+            throw new ShipmondoException($output['error'], $http_code);
         }
 
         $pagination = $this->_extractPagination($headers);
