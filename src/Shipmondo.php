@@ -144,6 +144,11 @@ class Shipmondo {
         return $result;
     }
     
+    public function getQuoteList($params) {
+        $result = $this->_makeApiCall("/quotes/list", 'POST', $params);
+        return $result;
+    }
+    
     public function getCarriers($params) {
         $result = $this->_makeApiCall("/carriers", 'GET', $params);
         return $result;
