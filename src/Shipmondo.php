@@ -3,7 +3,7 @@ require_once('ShipmondoException.php');
 
 class Shipmondo {
     const API_ENDPOINT = 'https://app.shipmondo.com/api/public/v3';
-    const VERSION = '3.1.2';
+    const VERSION = '3.1.3';
 
     private $_api_user;
     private $_api_key;
@@ -181,6 +181,11 @@ class Shipmondo {
     
     public function createSalesOrderShipment($sales_order_id) {
         $result = $this->_makeApiCall("/sales_orders/$sales_order_id/create_shipment", 'POST');
+        return $result;
+    }
+    
+    public function updateSalesOrderOrderNote($sales_order_id, $params) {
+        $result = $this->_makeApiCall("/sales_orders/$sales_order_id/order_note", 'PUT', $params);
         return $result;
     }
     
