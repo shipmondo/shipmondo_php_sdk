@@ -119,6 +119,11 @@ class Shipmondo {
         return $result;
     }
     
+    public function createPrintJob($params) {
+        $result = $this->_makeApiCall("/print_jobs", 'POST', $params);
+        return $result;
+    }
+    
     public function getReturnPortals($params = []) {
         $result = $this->_makeApiCall("/return_portals", 'GET', $params);
         return $result;
@@ -186,6 +191,11 @@ class Shipmondo {
     
     public function updateSalesOrderOrderNote($sales_order_id, $params) {
         $result = $this->_makeApiCall("/sales_orders/$sales_order_id/order_note", 'PUT', $params);
+        return $result;
+    }
+    
+    public function createSalesOrderShipmentFromBarcode($params) {
+        $result = $this->_makeApiCall("/sales_orders/barcode", 'POST', $params);
         return $result;
     }
     
