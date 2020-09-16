@@ -60,7 +60,7 @@ Pagination is supported
     'carrier_code' => 'gls',
     'zipcode' => '5000'
   ];
-  echo $client->pickupPoints($params);
+  echo $client->getPickupPoints($params);
 ?>
 ```
 #### Get shipments
