@@ -59,6 +59,16 @@ class Shipmondo {
         return $result;
     }
     
+    public function getShipmentWaybills($shipment_id) {
+        $result = $this->_makeApiCall("/shipments/$shipment_id/waybills", 'GET');
+        return $result;
+    }
+    
+    public function cancelShipmentAtCarrier($shipment_id) {
+        $result = $this->_makeApiCall("/shipments/$shipment_id/cancel_at_carrier", 'PUT');
+        return $result;
+    }
+    
     public function getCmrWaybills($params = []) {
         $result = $this->_makeApiCall("/cmr_waybills", 'GET', $params);
         return $result;
@@ -186,6 +196,11 @@ class Shipmondo {
     
     public function createSalesOrderShipment($sales_order_id) {
         $result = $this->_makeApiCall("/sales_orders/$sales_order_id/create_shipment", 'POST');
+        return $result;
+    }
+    
+    public function captureSalesOrder($sales_order_id) {
+        $result = $this->_makeApiCall("/sales_orders/$sales_order_id/capture", 'POST');
         return $result;
     }
     
