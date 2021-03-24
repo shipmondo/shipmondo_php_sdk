@@ -114,6 +114,31 @@ class Shipmondo {
         return $result;
     }
     
+    public function getWebhooks($params = []) {
+        $result = $this->_makeApiCall("/webhooks", 'GET', $params);
+        return $result;
+    }
+    
+    public function createWebhook($params) {
+        $result = $this->_makeApiCall("/webhooks", 'POST', $params);
+        return $result;
+    }
+    
+    public function getWebhook($id) {
+        $result = $this->_makeApiCall("/webhooks/$id", 'GET');
+        return $result;
+    }
+    
+    public function updateWebhook($id, $params = []) {
+        $result = $this->_makeApiCall("/webhooks/$id", 'PUT', $params);
+        return $result;
+    }
+    
+    public function deleteWebhook($id) {
+        $result = $this->_makeApiCall("/webhooks/$id", 'DELETE');
+        return $result;
+    }
+    
     public function getShipmentMonitorStatuses($params) {
         $result = $this->_makeApiCall("/shipment_monitor_statuses", 'GET', $params);
         return $result;
@@ -131,6 +156,16 @@ class Shipmondo {
     
     public function createPrintJob($params) {
         $result = $this->_makeApiCall("/print_jobs", 'POST', $params);
+        return $result;
+    }
+    
+    public function getPickLists($params) {
+        $result = $this->_makeApiCall("/pick_lists", 'GET', $params);
+        return $result;
+    }
+    
+    public function getPackingSlips($params) {
+        $result = $this->_makeApiCall("/packing_slips", 'GET', $params);
         return $result;
     }
     
@@ -191,6 +226,16 @@ class Shipmondo {
     
     public function getSalesOrder($id) {
         $result = $this->_makeApiCall("/sales_orders/$id", 'GET');
+        return $result;
+    }
+    
+    public function getSalesOrderPickList($sales_order_id, $params = []) {
+        $result = $this->_makeApiCall("/sales_orders/$sales_order_id/pick_list", 'GET', $params);
+        return $result;
+    }
+    
+    public function getSalesOrderPackingSlips($sales_order_id, $params = []) {
+        $result = $this->_makeApiCall("/sales_orders/$sales_order_id/packing_slips", 'GET', $params);
         return $result;
     }
     
