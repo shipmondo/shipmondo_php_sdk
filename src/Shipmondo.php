@@ -3,7 +3,7 @@ require_once('ShipmondoException.php');
 
 class Shipmondo {
     const API_ENDPOINT = 'https://app.shipmondo.com/api/public/v3';
-    const VERSION = '3.2.0';
+    const VERSION = '3.3.0';
 
     private $_api_user;
     private $_api_key;
@@ -256,6 +256,36 @@ class Shipmondo {
     
     public function createSalesOrderShipmentFromBarcode($params) {
         $result = $this->_makeApiCall("/sales_orders/barcode", 'POST', $params);
+        return $result;
+    }
+    
+    public function getItems($params = []) {
+        $result = $this->_makeApiCall("/items", 'GET', $params);
+        return $result;
+    }
+    
+    public function createItem($params) {
+        $result = $this->_makeApiCall("/items", 'POST', $params);
+        return $result;
+    }
+    
+    public function getItem($id) {
+        $result = $this->_makeApiCall("/items/$id", 'GET');
+        return $result;
+    }
+    
+    public function updateItem($id, $params) {
+        $result = $this->_makeApiCall("/items/$id", 'PUT', $params);
+        return $result;
+    }
+    
+    public function getSalesOrderPackagings($params = []) {
+        $result = $this->_makeApiCall("/sales_order_packaging", 'GET', $params);
+        return $result;
+    }
+    
+    public function getSalesOrderPackaging($id) {
+        $result = $this->_makeApiCall("/sales_order_packaging/$id", 'GET');
         return $result;
     }
     
