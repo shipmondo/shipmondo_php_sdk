@@ -3,7 +3,7 @@ require_once('ShipmondoException.php');
 
 class Shipmondo {
     const API_ENDPOINT = 'https://app.shipmondo.com/api/public/v3';
-    const VERSION = '3.3.0';
+    const VERSION = '3.4.0';
 
     private $_api_user;
     private $_api_key;
