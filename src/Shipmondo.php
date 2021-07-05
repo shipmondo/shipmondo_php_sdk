@@ -229,6 +229,11 @@ class Shipmondo {
         return $result;
     }
     
+    public function updateSalesOrder($id, $params) {
+        $result = $this->_makeApiCall("/sales_orders/$id", 'PUT', $params);
+        return $result;
+    }
+    
     public function getSalesOrderPickList($sales_order_id, $params = []) {
         $result = $this->_makeApiCall("/sales_orders/$sales_order_id/pick_list", 'GET', $params);
         return $result;
@@ -286,6 +291,16 @@ class Shipmondo {
     
     public function getSalesOrderPackaging($id) {
         $result = $this->_makeApiCall("/sales_order_packaging/$id", 'GET');
+        return $result;
+    }
+    
+    public function getBookkeepingIntegrations($params = []) {
+        $result = $this->_makeApiCall("/bookkeeping_integrations", 'GET', $params);
+        return $result;
+    }
+    
+    public function getBookkeepingIntegration($id) {
+        $result = $this->_makeApiCall("/bookkeeping_integrations/$id", 'GET');
         return $result;
     }
     
