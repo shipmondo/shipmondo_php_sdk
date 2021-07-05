@@ -229,8 +229,8 @@ class Shipmondo {
         return $result;
     }
 
-    public function updateSalesOrder($id) {
-        $result = $this->_makeApiCall("/sales_orders/$id", 'POST');
+    public function updateSalesOrder($id, $params) {
+        $result = $this->_makeApiCall("/sales_orders/$id", 'POST', $params);
         return $result;
     }
     
