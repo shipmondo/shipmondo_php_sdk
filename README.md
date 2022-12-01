@@ -137,16 +137,6 @@ Pagination is supported
   echo $client->createShipment($params);
 ?>
 ```
-#### Get shipment monitor statuses
-```php5
-<?php
-  $params = [
-    'ids' => '5546689,5546696',
-    'page' => 1
-  ];
-  echo $client->getShipmentMonitorStatuses($params);  
-?>
-```
 #### Get print queue entries
 ```php5
 <?php
