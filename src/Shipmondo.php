@@ -3,7 +3,7 @@ require_once('ShipmondoException.php');
 
 class Shipmondo {
     const API_ENDPOINT = 'https://app.shipmondo.com/api/public/v3';
-    const VERSION = '3.5.0';
+    const VERSION = '3.5.1';
 
     private $_api_user;
     private $_api_key;
@@ -13,6 +13,11 @@ class Shipmondo {
         $this->_api_user = $api_user;
         $this->_api_key = $api_key;
         $this->_api_base_path = $api_base_path;
+    }
+
+    public function getAccountInfo() {
+        $result = $this->_makeApiCall("/account", 'GET');
+        return $result;
     }
 
     public function getAccountBalance() {
